@@ -24,4 +24,4 @@ class CalculatePriceView(APIView):
             except Exception as e:
                 return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
         else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': 'Invalid input data'}, status=status.HTTP_400_BAD_REQUEST)
